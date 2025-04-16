@@ -154,6 +154,8 @@ tar -xvf rtl8367b.tar.gz
 # 定时限速插件
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 
+#添加qmodem摸鱼模组插件
+sed -i '$a src-git modem https://github.com/JDKCHINA/modem_feeds.git;main' feeds.conf.default
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
