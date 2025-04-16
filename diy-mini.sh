@@ -113,7 +113,9 @@ sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package
 # 默认不开启WiFi
 # sed -i "s/wireless.radio\${devidx}.disabled=0/wireless.radio\${devidx}.disabled=1/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 rm -rf package/kernel/mt76/*
-7z x $GITHUB_WORKSPACE/configfiles/mt76-mt7916.7z -o/package/kernel
+ls package/kernel/mt76
+tar -xvf $GITHUB_WORKSPACE/configfiles/mt76-mt7916.tar.gz
+ls package/kernel/mt76
 
 # 替换需要编译的内核版本
 # sed -i -E 's/KERNEL_PATCHVER:=[0-9]+\.[0-9]+/KERNEL_PATCHVER:=5.15/' target/linux/rockchip/Makefile
