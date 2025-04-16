@@ -91,7 +91,7 @@ sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/fil
 # 修改版本为编译日期
 date_version=$(date +"%y.%m.%d")
 orig_version=$(cat "package/lean/default-settings/files/zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
-sed -i "s/${orig_version}/R${date_version} by xiaomeng9597/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/${orig_version}/R${date_version} /g" package/lean/default-settings/files/zzz-default-settings
 
 # 修改 Makefile
 # find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/..\/..\/luci.mk/\$(TOPDIR)\/feeds\/luci\/luci.mk/g' {}
@@ -112,10 +112,10 @@ sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package
 
 # 默认不开启WiFi
 # sed -i "s/wireless.radio\${devidx}.disabled=0/wireless.radio\${devidx}.disabled=1/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
-rm -rf package/kernel/mt76/*
-ls package/kernel/mt76
-tar -xvf $GITHUB_WORKSPACE/configfiles/mt76-mt7916.tar.gz
-ls package/kernel/mt76
+#rm -rf package/kernel/mt76/*
+#ls package/kernel/mt76
+#tar -xvf $GITHUB_WORKSPACE/configfiles/mt76-mt7916.tar.gz
+#ls package/kernel/mt76
 
 # 替换需要编译的内核版本
 # sed -i -E 's/KERNEL_PATCHVER:=[0-9]+\.[0-9]+/KERNEL_PATCHVER:=5.15/' target/linux/rockchip/Makefile
