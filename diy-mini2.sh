@@ -137,13 +137,14 @@ cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3568-nsy-g16-plus.dts target/linux/roc
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3568-bdy-g18-pro.dts target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/rk3568-bdy-g18-pro.dts
 
 # 电工大佬的rtl8367b驱动资源包，暂时使用这样替换
-# wget https://github.com/xiaomeng9597/files/releases/download/files/rtl8367b.tar.gz
-# tar -xvf rtl8367b.tar.gz
+wget https://github.com/xiaomeng9597/files/releases/download/files/rtl8367b.tar.gz
+tar -xvf rtl8367b.tar.gz
 
 # openwrt主线rtl8367b驱动资源包，暂时使用这样替换
 # wget https://github.com/xiaomeng9597/files/releases/download/files/rtl8367b-openwrt.tar.gz
 # tar -xvf rtl8367b-openwrt.tar.gz
 
+# 定时限速插件
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 
 
