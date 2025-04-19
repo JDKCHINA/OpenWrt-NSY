@@ -9,7 +9,10 @@
 # TTYD 免登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
-
+#添加qmodem模组管理，modem插件，风扇插件
+sed -i '$a src-git modem https://github.com/JDKCHINA/modem_feeds.git;main' feeds.conf.default
+git clone https://github.com/Siriling/5G-Modem-Support package/luci-app-modem
+git clone https://github.com/JiaY-shi/fancontrol package/fancontrol
 
 # rm -rf feeds/luci/themes/luci-theme-argon
 # rm -rf feeds/luci/themes/luci-theme-design
